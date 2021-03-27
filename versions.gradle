@@ -1,0 +1,136 @@
+ext.deps = [:]
+def versions = [:]
+
+// Start of versioning ------------------
+
+// Android
+versions.gradle = '6.1.1'
+
+// Android
+versions.android_build_gradle = '3.6.4'
+
+// Kotlin
+versions.kotlin = '1.3.61'
+
+// Google Support Libraries
+versions.legacy_support = '1.0.0'
+versions.fragment = '1.2.5'
+versions.appcompat = '1.2.0'
+versions.material = '1.2.0'
+versions.recyclerview = '1.1.0'
+
+// RxJava
+versions.rxjava = '2.2.19'
+versions.rxandroid = '2.1.1'
+versions.retrofit2_rxjava2_adapter = '1.0.0'
+versions.rxSchedulerRule = '1.0.2'
+versions.rxDelay = '0.5.0'
+versions.rxbinding = '2.1.1'
+
+// OkHttp
+versions.okhttp = '3.11.0'
+
+// Dagger 2
+versions.dagger = '2.27'
+
+// Retrofit
+versions.retrofit = '2.4.0'
+
+// Misc
+versions.picasso = '2.5.2'
+versions.timber = '4.7.1'
+versions.gson = '2.8.5'
+versions.circle_image = '2.2.0'
+versions.recycler_view = '1.2.0-alpha04'
+versions.glide = '4.11.0'
+versions.lottie = '3.4.2'
+
+// Unit Testing
+versions.junit = '4.12'
+versions.mockito = '3.3.0'
+
+// End of versioning ------------------
+
+ext.versions = versions
+
+def deps = [:]
+
+// Start of dependencies ------------------
+
+def android = [:]
+android.build_gradle = "com.android.tools.build:gradle:$versions.android_build_gradle"
+deps.android = android
+
+// Kotlin
+def kotlin = [:]
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+deps.kotlin = kotlin
+
+// Google Support Libraries
+def google = [:]
+google.legacy_support = "androidx.legacy:legacy-support-v4:$versions.legacy_support"
+google.fragment = "androidx.fragment:fragment:$versions.fragment"
+google.appcompat = "androidx.appcompat:appcompat:$versions.appcompat"
+google.material = "com.google.android.material:material:$versions.material"
+google.recyclerview = "androidx.recyclerview:recyclerview:$versions.recyclerview"
+deps.google = google
+
+// RxJava
+def rxjava = [:]
+rxjava.rxjava_core = "io.reactivex.rxjava2:rxjava:$versions.rxjava"
+rxjava.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+rxjava.retrofit2_rxjava2_adapter = "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.retrofit2_rxjava2_adapter"
+rxjava.rxSchedulerRule = "com.github.Plastix.RxSchedulerRule:rx2:$versions.rxSchedulerRule"
+rxjava.rxDelay = "com.github.Plastix.RxDelay:rx2:$versions.rxDelay"
+rxjava.rxBinding = "com.jakewharton.rxbinding2:rxbinding:$versions.rxbinding"
+deps.rxjava = rxjava
+
+// Dagger 2
+def dagger = [:]
+dagger.dagger_kapt = "com.google.dagger:dagger-compiler:$versions.dagger"
+dagger.dagger_core = "com.google.dagger:dagger:$versions.dagger"
+deps.dagger = dagger
+
+// Network
+def network = [:]
+network.retrofit_core = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+network.retrofit_converter_gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+network.retrofit_adapter = "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+network.okhttp = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+deps.network = network
+
+// Misc
+def misc = [:]
+misc.picasso = "com.squareup.picasso:picasso:$versions.picasso"
+misc.timber = "com.jakewharton.timber:timber:$versions.timber"
+misc.gson = "com.google.code.gson:gson:$versions.gson"
+misc.circle_image = "de.hdodenhof:circleimageview:$versions.circle_image"
+misc.recycler_view = "androidx.recyclerview:recyclerview:$versions.recycler_view"
+misc.glide = "com.github.bumptech.glide:glide:$versions.glide"
+misc.glide_compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+misc.lottie = "com.airbnb.android:lottie:$versions.lottie"
+deps.misc = misc
+
+// Unit Testing
+def unit_test = [:]
+unit_test.junit = "junit:junit:$versions.junit"
+unit_test.mockito = "org.mockito:mockito-core:$versions.mockito"
+deps.unit_test = unit_test
+
+// End of dependencies ------------------
+
+ext.deps = deps
+
+def build_versions = [:]
+build_versions.min_sdk = 19
+build_versions.compile_sdk = 29
+build_versions.target_sdk = 29
+build_versions.build_tools = '29.0.3'
+ext.build_versions = build_versions
+
+def app_build_versions = [:]
+app_build_versions.version_major = 0
+app_build_versions.version_minor = 0
+app_build_versions.version_patch = 1
+ext.app_build_versions = app_build_versions
