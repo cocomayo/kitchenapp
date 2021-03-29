@@ -46,6 +46,9 @@ dependencies {
 
     // Rx
     implementation deps.rxjava.rxBinding
+    implementation deps.rxjava.rxjava_core
+    implementation deps.rxjava.rxandroid
+    implementation deps.rxjava.retrofit2_rxjava2_adapter
 
     // Misc
     implementation deps.misc.circle_image
@@ -53,4 +56,5 @@ dependencies {
     implementation deps.misc.glide
     kapt deps.misc.glide_compiler
     implementation deps.misc.lottie
+    implementation deps.misc.cardview
 }

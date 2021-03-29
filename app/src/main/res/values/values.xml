@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Title14">
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Title14.Normal">
+        <item name="android:textColor">@color/normal_title</item>
+    </style>
+
+    <style name="Title14.Secondary">
+        <item name="android:textColor">@color/secondary</item>
+    </style>
+
+    <style name="Title20">
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Title20.Normal">
+        <item name="android:textColor">@color/normal_title</item>
+    </style>
+
+    <style name="Title20.Secondary">
+        <item name="android:textColor">@color/secondary</item>
+    </style>
+
+    <style name="Title24">
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Title24.Normal">
+        <item name="android:textColor">@color/normal_title</item>
+    </style>
+
+    <style name="Title24.Secondary">
+        <item name="android:textColor">@color/secondary</item>
+    </style>
+
+    <style name="Title28">
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="Title28.Normal">
+        <item name="android:textColor">@color/normal_title</item>
+    </style>
+
+    <style name="Title28.Secondary">
+        <item name="android:textColor">@color/secondary</item>
+    </style>
+
+</resources>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KitchenApp</string>
+    <string name="title">KitchenApp</string>
 </resources>

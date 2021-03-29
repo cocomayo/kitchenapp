@@ -44,6 +44,8 @@ versions.circle_image = '2.2.0'
 versions.recycler_view = '1.2.0-alpha04'
 versions.glide = '4.11.0'
 versions.lottie = '3.4.2'
+versions.cardview = '1.0.0'
+versions.materialdesign = '1.2.0'
 
 // Unit Testing
 versions.junit = '4.12'
@@ -110,6 +112,8 @@ misc.recycler_view = "androidx.recyclerview:recyclerview:$versions.recycler_view
 misc.glide = "com.github.bumptech.glide:glide:$versions.glide"
 misc.glide_compiler = "com.github.bumptech.glide:compiler:$versions.glide"
 misc.lottie = "com.airbnb.android:lottie:$versions.lottie"
+misc.cardview = "androidx.cardview:cardview:$versions.cardview"
+misc.materialdesign = "com.google.android.material:material:$versions.materialdesign"
 deps.misc = misc
 
 // Unit Testing
