@@ -46,6 +46,8 @@ versions.glide = '4.11.0'
 versions.lottie = '3.4.2'
 versions.cardview = '1.0.0'
 versions.materialdesign = '1.2.0'
+versions.coroutines = '1.4.2'
+versions.multidex = "2.0.1"
 
 // Unit Testing
 versions.junit = '4.12'
@@ -114,6 +116,9 @@ misc.glide_compiler = "com.github.bumptech.glide:compiler:$versions.glide"
 misc.lottie = "com.airbnb.android:lottie:$versions.lottie"
 misc.cardview = "androidx.cardview:cardview:$versions.cardview"
 misc.materialdesign = "com.google.android.material:material:$versions.materialdesign"
+misc.coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+misc.coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+misc.multidex = "androidx.multidex:multidex:$versions.multidex"
 deps.misc = misc
 
 // Unit Testing

@@ -20,7 +20,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            multiDexEnabled true
+        }
         release {
+            multiDexEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -57,4 +61,9 @@ dependencies {
     kapt deps.misc.glide_compiler
     implementation deps.misc.lottie
     implementation deps.misc.cardview
+    implementation deps.misc.gson
+    implementation deps.misc.materialdesign
+    implementation deps.misc.coroutines
+    implementation deps.misc.coroutines_android
+    implementation deps.misc.multidex
 }

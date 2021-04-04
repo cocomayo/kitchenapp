@@ -6,8 +6,8 @@ buildscript {
     repositories {
         google()
         jcenter()
-
     }
+
     dependencies {
         classpath deps.android.build_gradle
         classpath deps.kotlin.plugin
