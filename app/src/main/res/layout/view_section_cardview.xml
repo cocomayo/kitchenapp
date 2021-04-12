@@ -21,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/ll_section_wrapper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/tosca"
@@ -52,11 +53,12 @@
                 android:textColor="@color/orange"
                 tools:text="PREPARING 001" />
 
-            <include
-                layout="@layout/view_order"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_order_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp" />
+                android:layout_marginStart="12dp"
+                android:background="@color/white" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/et_report"

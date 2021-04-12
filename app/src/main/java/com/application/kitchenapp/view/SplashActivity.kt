@@ -34,10 +34,10 @@ class SplashActivity : AppCompatActivity() {
             }
         }
 
-        disposable.add(Flowable.timer(5000, TimeUnit.MILLISECONDS)
+        disposable.add(Flowable.timer(2000, TimeUnit.MILLISECONDS)
             .subscribeOn(AndroidSchedulers.mainThread())
             .subscribe {
-                startActivity(Intent(this, DashboardActivity::class.java))
+                startActivity(Intent(this, MainActivity::class.java))
                 finish()
             }
         )

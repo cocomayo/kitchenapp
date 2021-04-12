@@ -1,7 +1,9 @@
 package com.application.kitchenapp.processor
 
 import android.content.Context
+import com.application.kitchenapp.model.SectionDetailModel
 import kotlinx.coroutines.*
+import java.util.*
 
 
 /**
@@ -9,23 +11,31 @@ import kotlinx.coroutines.*
  * @version OrderProcessor, v 0.1 29/03/21 12.48 by Richo Mahardika
  */
 abstract class AbstractOrderProcessor(context: Context) {
-    private var orders = context.getOrdersFromFile()
+    private val date by lazy { Date() }
 
-    fun processOrder(onResult: (result: String) -> Unit): Job {
+    private val orders by lazy {
+        context.getOrdersFromFile()
+    }
+
+    fun processOrder(onResult: (result: SectionDetailModel) -> Unit): Job {
         var counter = 0
         return CoroutineScope(Dispatchers.Main).launch {
             for (order in orders) {
-                this@AbstractOrderProcessor.dispatchOrderToKitchen { successKitchen ->
-                    if (successKitchen) dispatchToShelf { successShelf ->
-                        if (successShelf) dispatchToCourier {
-                            onResult(order.name)
+                processInKitchen(
+                    SectionDetailModel(date.toTimeString(), order.id, order.name, "IN_KITCHEN")
+                ) { kitchen ->
+                    if (kitchen.orderStatus == "TO_SHELF") processToShelf(kitchen) { shelf ->
+                        if (shelf.orderStatus == "TO_COURIER") dispatchToCourier(shelf) { courier ->
+                            onResult(courier)
                         }
                     }
                 }
+
                 if (counter == DEFAULT_ORDER_INTERVAL) {
                     delay(TIME_INTERVAL.toLong())
                     counter = 0
                 }
+
                 counter++
             }
 
@@ -33,11 +43,20 @@ abstract class AbstractOrderProcessor(context: Context) {
         }
     }
 
-    protected abstract fun dispatchToCourier(onResult: (result: Boolean) -> Unit)
+    protected abstract fun dispatchToCourier(
+        result: SectionDetailModel,
+        onResult: (result: SectionDetailModel) -> Unit
+    )
 
-    protected abstract fun dispatchToShelf(onResult: (result: Boolean) -> Unit)
+    protected abstract fun processToShelf(
+        result: SectionDetailModel,
+        onResult: (result: SectionDetailModel) -> Unit
+    )
 
-    protected abstract fun dispatchOrderToKitchen(onResult: (result: Boolean) -> Unit)
+    protected abstract suspend fun processInKitchen(
+        result: SectionDetailModel,
+        onResult: (result: SectionDetailModel) -> Unit
+    )
 
     protected abstract fun canProcessOrder(int: Int): Boolean
 

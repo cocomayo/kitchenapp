@@ -8,7 +8,6 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
 import androidx.annotation.StyleableRes
-import io.reactivex.disposables.CompositeDisposable
 
 
 /**
@@ -16,7 +15,6 @@ import io.reactivex.disposables.CompositeDisposable
  * @version BaseRichView, v 0.1 31/03/21 13.27 by Richo Mahardika
  */
 abstract class BaseRichView : FrameLayout {
-    private var disposables: CompositeDisposable? = null
     private var view: View? = null
     private var styledAttributes: TypedArray? = null
 

@@ -1,4 +1,4 @@
-package com.application.kitchenapp.view
+package com.application.kitchenapp.view.section
 
 import android.annotation.TargetApi
 import android.content.Context
@@ -6,17 +6,13 @@ import android.os.Build
 import android.util.AttributeSet
 import com.application.kitchenapp.R
 import com.application.kitchenapp.view.base.BaseRichView
-import kotlinx.android.synthetic.main.view_section_cardview.view.*
 
 
 /**
  * @author Richo Mahardika (richo.mahardika@dana.id)
- * @version SectionCardView, v 0.1 31/03/21 13.21 by Richo Mahardika
+ * @version OrderView, v 0.1 12/04/21 15.02 by Richo Mahardika
  */
-class SectionCardView : BaseRichView {
-
-    private var edText = ""
-
+class OrderView : BaseRichView {
     @JvmOverloads
     constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
             super(context, attrs, defStyleAttr)
@@ -26,14 +22,9 @@ class SectionCardView : BaseRichView {
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int)
             : super(context, attrs, defStyleAttr, defStyleRes)
 
-    override fun getLayout(): Int = R.layout.view_section_cardview
+    override fun getLayout(): Int = R.layout.view_order
 
     override fun setup() {
         //not yet implemented
-    }
-
-    fun setReportText(text: String?) {
-        edText += text + "\n"
-        et_report?.setText(edText)
     }
 }

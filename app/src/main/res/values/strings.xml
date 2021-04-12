@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">KitchenApp</string>
     <string name="title">KitchenApp</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_kitchen">Kitchen</string>
+    <string name="title_shelf">Shelf</string>
+    <string name="title_courier">Courier</string>
+    <string name="title_console">Console</string>
 </resources>

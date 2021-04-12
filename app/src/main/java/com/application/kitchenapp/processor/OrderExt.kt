@@ -3,9 +3,10 @@ package com.application.kitchenapp.processor
 import android.content.Context
 import com.application.kitchenapp.model.Order
 import com.google.gson.Gson
-import org.json.JSONObject
 import java.io.IOException
 import java.io.InputStream
+import java.text.SimpleDateFormat
+import java.util.*
 import kotlin.math.roundToInt
 
 
@@ -36,4 +37,16 @@ fun inputStreamToString(inputStream: InputStream): String {
     } catch (e: IOException) {
         ""
     }
+}
+
+fun Date.toTimeString(locale: Locale = Locale.getDefault()) =
+    SimpleDateFormat("hh:mm", locale).format(this).orEmpty()
+
+fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String {
+    val formatter = SimpleDateFormat(format, locale)
+    return formatter.format(this)
+}
+
+fun getCurrentDateTime(): Date {
+    return Calendar.getInstance().time
 }
